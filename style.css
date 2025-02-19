@@ -1,0 +1,622 @@
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	background: linear-gradient(180deg, #fff 10%, #607d8b 50%, #fff 100%);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+	background: linear-gradient(to right, #ff8b1c, #ff8b1c 25%, #121212 25%);
+	height: 16vh;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+#logo {
+	width: 13vmin;
+	background: #ff8b1c;
+	padding: 1.5vmin;
+	transform: rotate(-90deg);
+	height: 14vmin;
+	margin-left: -20vmin;
+	margin-top: -1vh;
+	z-index: -1;
+	position: absolute;
+}
+
+#brand-name,
+.tagline {
+	float: left;
+	margin: 0.5vmin 0;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: 8.5vmin;
+	z-index: 2;
+	position: relative;
+}
+
+.tagline {
+	font-size: 2vmin;
+	margin: -0.65em 0 0 0;
+	color: #ff8b1c;
+	text-shadow: -1px -1px 0 #000;
+	box-sizing: border-box;
+}
+
+section {
+	padding: 2vmin;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+h2 {
+	margin: 0;
+	font-size: 4vmin;
+	text-align: center;
+	font-weight: normal;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+	text-shadow: 0px 1px 1px #fff, 0 0 1px #fff;
+}
+
+.category-description {
+	text-align: center;
+	color: #3f51b5;
+	font-size: 2vmin;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+	text-shadow: 0px 1px 1px #fff, 0 0 1px #fff;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.item {
+	display: inline-table;
+	width: 31.5%;
+	background: white;
+	margin: 2% 2% 0 0%;
+	border-radius: 2px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: rgb(0 0 0 / 25%) 0px 0.0625em 0.0625em,
+		rgb(0 0 0 / 25%) 0px 0.125em 0.5em,
+		rgb(255 255 255 / 10%) 0px 0px 0px 1px inset;
+}
+
+.item:last-of-type {
+	margin-right: 0;
+}
+
+h3 {
+	position: absolute;
+	margin: 0;
+	color: #ffffff;
+	z-index: 1;
+	background: #e10102;
+	padding: 0.5vmin 0.75vmin;
+	border-radius: 0 0 1px 0;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+.item:first-of-type h3 {
+	background: #000065;
+}
+
+.item:last-of-type h3 {
+	background: #000000;
+}
+
+figcaption {
+	margin-top: -2.25vmin;
+	font-size: 0.75em;
+	color: #00000080;
+	text-shadow: -1px 1px 0 #ffffff80;
+	padding-right: 0.5vmin;
+	float: right;
+	position: relative;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+figure {
+	margin: 0;
+	overflow: hidden;
+}
+
+figure img {
+	width: 100%;
+	transform: scale(1) rotate(0deg);
+	transition: transform 0.5s ease 0s;
+	animation: zoom-image 3s ease 0s 1;
+}
+
+figure:hover img {
+	transform: scale(2) rotate(5deg);
+	transition: transform 0.5s ease 0s;
+}
+
+.item + .item figure img {
+	animation-delay: 0.65s;
+}
+
+.item + .item + .item figure img {
+	animation-delay: 1.3s;
+}
+
+.description {
+	margin: 1vmin;
+	color: #666;
+	font-size: 0.9em;
+	max-height: 3.5em;
+	overflow: hidden;
+	height: 18vh;
+	transition: max-height 0.5s ease 0s;
+	position: relative;
+	text-indent: 1.5em;
+}
+
+.more {
+	background: #fff0;
+	width: 1em;
+	height: 1em;
+	position: absolute;
+	left: 1vmin;
+	z-index: 1;
+	margin-top: 1vmin;
+	cursor: cell;
+}
+
+.more:hover + .description {
+	max-height: 18vh;
+	transition: max-height 0.5s ease 0s;
+}
+
+.description:before {
+	content: " + ";
+	float: right;
+	position: absolute;
+	left: 0;
+	top: 0em;
+	font-size: 1.2em;
+	height: 0.9em;
+	width: 0.9em;
+	border-radius: 1px;
+	line-height: 0.95em;
+	text-align: center;
+	transition: top 0.5s ease 0s;
+	text-indent: 0;
+	font-weight: bold;
+	background: #3f51b5;
+	color: #fff;
+}
+.more:hover + .description:before {
+	content: " - ";
+	line-height: 0.8em;
+}
+
+.description:after {
+	content: "...";
+	opacity: 1;
+	line-height: 0.8em;
+	position: absolute;
+	top: 2.4em;
+	right: 0;
+	transition: opacity 0.5s ease 0s;
+}
+
+.more:hover + .description:after {
+	content: "  ";
+	opacity: 0;
+	transition: opacity 0.5s ease 0s;
+}
+
+.price {
+	margin: 1vmin;
+	background: #3f51b5;
+	padding: 1vmin;
+	color: #fff;
+	float: right;
+	width: 6em;
+	text-align: right;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+.price strong {
+	font-size: 1.35em;
+	line-height: 0.5em;
+	top: 0.25vmin;
+	position: relative;
+	font-weight: normal;
+}
+
+.special {
+	margin: 1vmin;
+	display: inline-flex;
+	background: green;
+	float: left;
+	width: calc(100% - 10.25em);
+	padding: 1vmin;
+	color: #fff;
+	margin-right: 0;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+}
+
+.special.empty {
+	background: transparent;
+}
+
+label {
+	margin: 1vmin;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	margin-right: 0;
+	padding: 0.75em 0.35em 0.75em 0.35em;
+	border-right: 1px solid #666;
+	color: #444;
+	z-index: 2;
+	position: relative;
+	pointer-events: none;
+}
+
+select {
+	margin: 1vmin;
+	margin-left: 0vmin;
+	border: 1px solid #666666;
+	border-radius: 1px;
+	height: 3em;
+	outline: none;
+	text-transform: uppercase;
+	margin-right: 0;
+	cursor: pointer;
+	font-size: 0.75em;
+}
+
+select[name="size"] {
+	padding-left: 3em;
+	margin-left: -3em;
+	z-index: 1;
+	position: relative;
+	width: calc(33% - 2vmin);
+}
+
+select[name="color"] {
+	padding-left: 4.75em;
+	margin-left: -4.35em;
+	z-index: 1;
+	position: relative;
+	width: calc(67% - 1vmin);
+}
+
+select[name="quantity"] {
+	padding-left: 6em;
+	margin-left: -5.85em;
+	z-index: 1;
+	position: relative;
+	width: calc(38% - 2vmin);
+}
+
+select option:disabled {
+	background: #c1c1c1;
+}
+
+button {
+	border: 0;
+	background: #ff8b1c;
+	color: #fff;
+	text-transform: uppercase;
+	float: right;
+	margin-right: 1vmin;
+	margin-bottom: 1vmin;
+	padding: 1vmin;
+	margin-top: 1vmin;
+	width: 58.5%;
+	cursor: pointer;
+	font-family: "Days One", Arial, Helvetica, sans-serif;
+	position: relative;
+	text-align: left;
+}
+
+button:hover {
+	background: #222;
+}
+
+button:after {
+	content: "+";
+	background: #212121;
+	width: 1.5em;
+	float: right;
+	text-align: center;
+	font-size: 2em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+}
+
+@keyframes zoom-image {
+	0% {
+		transform: scale(1) rotate(0deg);
+		transition: transform 0.5s ease 0s;
+	}
+	60% {
+		transform: scale(2) rotate(5deg);
+		transition: transform 0.5s ease 0s;
+	}
+	100% {
+		transform: scale(1) rotate(0deg);
+		transition: transform 0.5s ease 0s;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+	header {
+		background: linear-gradient(to right, #ff8b1c, #ff8b1c 15%, #121212 15%);
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	header {
+		background: linear-gradient(to right, #ff8b1c, #ff8b1c 25%, #121212 25%);
+	}
+	.item {
+		width: 48.5%;
+	}
+	.item + .item {
+		margin-right: 0;
+	}
+	figcaption {
+		margin-top: -3.5vmin;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.item {
+		width: 99.5%;
+	}
+	.item {
+		margin-right: 0;
+	}
+	button {
+		height: 2.75em;
+	}
+	figcaption {
+		margin-top: -5vmin;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	select {
+		width: calc(100% - 2.5vmin) !important;
+		float: right;
+		margin-right: 1vmin;
+	}
+	label {
+		float: left;
+	}
+	.price,
+	.special {
+		width: calc(100% - 4vmin);
+	}
+	button {
+		width: calc(100% - 2vmin);
+		height: 2.5em;
+	}
+	button:after {
+		line-height: 1.15em;
+	}
+}
+
+
+
+
+[class*="entypo-"]:before { font-family: 'entypo', sans-serif; }
+body {
+  background-color: #ecf0f1;
+  font: 300 1.25em/1.4 "Lato", sans-serif;
+  color: #686868;
+}
+h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+h1, .sub-heading {
+  text-align: center;
+  margin: .5rem 0 1rem;
+}
+.sub-heading {
+  font-size: .75em;
+  font-weight: 300;
+}
+
+/**
+ * @section: utilities;
+ * @see: Justify Grid [http://justifygrid.com/]
+ */
+._grid {
+  text-align: justify !important;
+  text-justify: distribute-all-lines;
+  font-size: 0 !important;
+  text-rendering: optimizespeed;
+}
+._grid:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+._column {
+  display: inline-block;
+  vertical-align: top;
+  font-size: medium;
+  text-align: left;
+  text-rendering: optimizeLegibility;
+}
+._btn {
+  display: inline-block;
+  background-color: #bdc3c7;
+  border: none;
+  padding: .5em .75em;
+  text-align: center;
+  font-weight: 300;
+}
+._btn:hover,
+.cart-totals:hover ._btn {
+  background-color: #3498db;
+  color: #ecf0f1;
+}
+
+/**
+ * @section: shopping-cart;
+ */
+.shopping-cart {
+  width: 80%;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+/**
+ * @extends: _grid;
+ */
+.shopping-cart--list-item {
+  border: 1px solid #bdc3c7;
+  margin-bottom: 3rem;
+  height: 10rem;
+  overflow: hidden;
+}
+.shopping-cart--list-item:hover,
+.shopping-cart--list-item:hover * {
+  border-color: #3498db;
+}
+.shopping-cart--list-item > ._column {
+    height: 100%; /* make vertical lines match */
+}
+
+/**
+ * @section: product-image;
+ * @extends: _column;
+ */
+.product-image {
+  width: 16.663198%;
+  background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") no-repeat center / cover transparent;
+}
+
+/**
+ * @section: product-info;
+ * @extends: _column;
+ */
+.product-info {
+  width: 70.832119%;
+  padding: .5rem;
+}
+.product-name {
+  font: 300 2.4em/1 "Lato", sans-serif;
+  letter-spacing: -.025em;
+  margin: 0 0 .125em;
+}
+.price {
+  line-height: 1;
+  text-align: right;
+}
+.product-single-price {
+  margin-top: -1rem;
+  font-size: 2.4em;
+}
+
+/**
+ * @section: product-modifiers;
+ * @extends: _column;
+ */
+.product-modifiers {
+  width: 12.496358%;
+  text-align: right;
+  border-left: 1px solid #bdc3c7;
+}
+.product-subtract,
+.product-plus,
+.product-qty {
+  width: 33.330557%;
+  background-color: transparent;
+  color: #686868;
+  text-align: center;
+}
+.product-qty {
+  padding: .35em .75em;
+}
+.product-remove {
+  font-size: .875em;
+  margin-top: 3.35rem;
+  background-color: #e74c3c;
+  color: #ecf0f1;
+  width: 100%;
+  visibility: hidden;
+}
+.product-modifiers:hover .product-remove {
+  visibility: visible;
+}
+.product-remove:before {
+  margin-right: .5em;
+}
+.product-remove:hover {
+  background-color: #c0392b;
+}
+.product-total-price {
+  border-top: 1px solid #bdc3c7;
+  color: #95a5a6;
+  font-size: 1.25em;
+  padding: .5rem;
+}
+.shopping-cart--list-item:hover .product-total-price {
+  background-color: #3498db;
+  color: #ecf0f1;
+}
+
+/**
+ * @section: cart-totals;
+ * @extends: _grid;
+ */
+.cart-totals {
+  border-top: 1px solid #bdc3c7;
+  margin-bottom: 3rem;
+}
+.cart-totals ._column {
+  width: 19.984013%;
+  padding: .5rem;
+  line-height: 1.2;
+}
+.cart-totals ._column:not(:last-of-type) {
+  border-right: 1px solid #bdc3c7;
+}
+.cart-totals ._column:first-of-type {
+  padding-left: 0;
+}
+.cart-totals-key {
+  font-size: 1.125em;
+  color: #bdc3c7;
+}
+.cart-totals ._column:hover .cart-totals-value,
+.cart-totals ._column:hover .cart-totals-key {
+  color: #333;
+}
+.cart-totals-value {
+  font-size: 2em;
+}
+._column.checkout {
+  text-align: right;
+  padding: 0;
+  margin-top: 1.5em;
+  vertical-align: middle;
+}
+.checkout-btn:before {
+  margin-right: .5em;
+}
+._btn.checkout-btn:hover {
+  background-color: #2980b9;
+}
+
+/**
+ * Animations
+ */
+.product-remove,
+.cart-totals * {
+  transition: all .2s ease;
+}
+.closing {
+  transition: all .5s ease;
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+}
